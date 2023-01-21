@@ -1,0 +1,72 @@
+{
+  "-NMKDKAdmQ_1lkEg8JBC": {
+    "firebaseKey": "-NMKDKAdmQ_1lkEg8JBC",
+    "name": "Efren",
+    "image": "http://dummyimage.com/100x100.png/cc0000/ffffff",
+    "role": "Estimator",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAfvWtShYu3Xlc5": {
+    "firebaseKey": "-NMKDKAfvWtShYu3Xlc5",
+    "name": "Brander",
+    "image": "http://dummyimage.com/100x100.png/dddddd/000000",
+    "role": "Subcontractor",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAiZ54UZtzgQAuy": {
+    "firebaseKey": "-NMKDKAiZ54UZtzgQAuy",
+    "name": "Charity",
+    "image": "http://dummyimage.com/100x100.png/dddddd/000000",
+    "role": "Estimator",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAlYVG0n3a_LM76": {
+    "firebaseKey": "-NMKDKAlYVG0n3a_LM76",
+    "name": "Kathryn",
+    "image": "http://dummyimage.com/100x100.png/cc0000/ffffff",
+    "role": "Subcontractor",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAnGoG6CgzVGcTe": {
+    "firebaseKey": "-NMKDKAnGoG6CgzVGcTe",
+    "name": "Ingunna",
+    "image": "http://dummyimage.com/100x100.png/ff4444/ffffff",
+    "role": "Electrician",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAp2Ib2FFYBpt2L": {
+    "firebaseKey": "-NMKDKAp2Ib2FFYBpt2L",
+    "name": "Vidovic",
+    "image": "http://dummyimage.com/100x100.png/dddddd/000000",
+    "role": "Estimator",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAspQ2rGa9aze-A": {
+    "firebaseKey": "-NMKDKAspQ2rGa9aze-A",
+    "name": "Gwenora",
+    "image": "http://dummyimage.com/100x100.png/cc0000/ffffff",
+    "role": "Construction Foreman",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAuIlTojGEbbRTx": {
+    "firebaseKey": "-NMKDKAuIlTojGEbbRTx",
+    "name": "Kamillah",
+    "image": "http://dummyimage.com/100x100.png/dddddd/000000",
+    "role": "Construction Manager",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAwuX8mjhey5gDe": {
+    "firebaseKey": "-NMKDKAwuX8mjhey5gDe",
+    "name": "Renate",
+    "image": "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
+    "role": "Supervisor",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  },
+  "-NMKDKAyegwWqKzvUOry": {
+    "firebaseKey": "-NMKDKAyegwWqKzvUOry",
+    "name": "Ripley",
+    "image": "http://dummyimage.com/100x100.png/cc0000/ffffff",
+    "role": "Supervisor",
+    "uid": "wJbEDyKUhQVodaTwbFxOKKBluHy2"
+  }
+}
