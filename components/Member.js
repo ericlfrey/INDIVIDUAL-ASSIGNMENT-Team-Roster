@@ -3,10 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
+import { deleteSingleMember } from '../api/members';
 
-export default function Member({ obj }) {
-  const deleteThisAuthor = () => {
-    console.warn('DELETE', obj.firebaseKey);
+export default function Member({ obj, onUpdate }) {
+  const deleteThisMember = () => {
+    if (window.confirm(`Delete ${obj.name}?`)) {
+      deleteSingleMember(obj.firebaseKey).then(() => onUpdate());
+    }
   };
   return (
     <>
@@ -14,10 +17,11 @@ export default function Member({ obj }) {
         <Card.Img variant="top" src={obj.image} alt={obj.name} style={{ height: '400px' }} />
         <Card.Body>
           <Card.Title>{obj.name}</Card.Title>
-          <Link href={`/member/edit/${obj.firebaseKey}`} passHref>
+          <Card.Title>{obj.role}</Card.Title>
+          <Link href={`/member/${obj.firebaseKey}`} passHref>
             <Button variant="info">EDIT</Button>
           </Link>
-          <Button variant="danger" onClick={deleteThisAuthor} className="m-2">
+          <Button variant="danger" onClick={deleteThisMember} className="m-2">
             DELETE
           </Button>
         </Card.Body>
@@ -35,6 +39,7 @@ Member.propTypes = {
     uid: PropTypes.string,
 
   }),
+  onUpdate: PropTypes.func.isRequired,
 };
 
 Member.defaultProps = {
