@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { getMembers } from '../api/members';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
   const { user } = useAuth();
+
+  useEffect(() => {
+    getMembers(user.uid).then((members) => {
+      console.warn(members);
+    });
+  });
 
   return (
     <div
