@@ -6,36 +6,27 @@ Ka-Tet is a Team Roster App based on the Dark Tower Series of books by Stephen K
 [View App](https://elfrey-ka-tet.netlify.app/)
 
 ## Get Started <!-- OPTIONAL, but doesn't hurt -->
-PLACE CODE SNIPPET HERE
+$ git clone git@github.com:ericlfrey/INDIVIDUAL-ASSIGNMENT-Team-Roster.git
+$ cd INDIVIDUAL-ASSIGNMENT-Team-Roster.git
 
-## About the User <!-- This is a scaled down user persona -->
-- The ideal user for this application is a teacher
-- They have students in their classrooms that they would like to put into random groups and they have a love and passion of Harry Potter
-- The problem this app solves for them is it allows them to get their students involved and excited about being in random groups. The students have felt that the groups have not been so random and based on favorites.
+## About the App
+- Learning NextJS and the concepts of Routes is a helpful step to becoming a Web Developer.
+- This app achieves full CRUD using React Hooks and Google Firebase with Google Authentication.
 
-## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
-- When a new student is added an object should be created and that object should be pushed into an array of students that then prints to the DOM.
-- House Colors: The color of the student's card changes depending on which house they were sorted.
-- Card Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
-- Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
+## Features 
+- When a new user signs in, they are given the option to create their own Ka-Tet, and assign team members roles.
+- A User can only see their own roster.
+- A User can Edit, and Delete individual Team Members.
 
-## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
-https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
-
-## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#your-link)
-- [Wireframes](#your-link)
-- [Project Board](#your-link)
+## Relevant Links 
+- [Check out the deployed site](https://elfrey-ka-tet.netlify.app/)
+- [Wireframes](https://www.figma.com/file/RvcqVsaIiC6KaagbQn0yoW/Team-Roster-NSS-Project?node-id=0%3A1&t=Bf8oNS2aM9MGtIhl-0)
 
 ## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
-PLACE CODE SNIPPET HERE
+<img width="500" src="https://user-images.githubusercontent.com/107942776/213924891-7669aeb6-d243-4f10-b313-e252bbc61c89.png">
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
-<img width="1148" alt="Your Alt" src="your-link.png">
+<img width="500" alt="Your Alt" src="https://user-images.githubusercontent.com/107942776/213924892-ac4637b5-39b8-41c0-ba67-6baf5e676f54.png">
 
 ## Contributors
-- [YOUR NAME](https://github.com/your-github-url)
-
-
-WireFrame
-https://www.figma.com/file/RvcqVsaIiC6KaagbQn0yoW/Team-Roster-NSS-Project?node-id=0%3A1&t=Bf8oNS2aM9MGtIhl-0
+- [Eric Frey](https://github.com/ericlfrey)
