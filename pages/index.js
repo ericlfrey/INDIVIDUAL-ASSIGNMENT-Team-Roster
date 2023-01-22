@@ -1,22 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
+import { getMembers } from '../api/members';
+import Member from '../components/Member';
 import { useAuth } from '../utils/context/authContext';
 
-function Home() {
+export default function Home() {
+  const [members, setMembers] = useState([]);
   const { user } = useAuth();
 
+  const getAllMembers = () => {
+    getMembers(user.uid).then(setMembers);
+  };
+  useEffect(() => {
+    getAllMembers();
+  }, []);
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        // maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
-      <h1>Hello {user.displayName}! </h1>
-      <h1>Enter to View your Ka-Tet</h1>
-    </div>
+    <>
+      <h1>Your Ka-Tet</h1>
+      <div className="d-flex flex-wrap">
+        {members.map((member) => (
+          <Member key={member.firebaseKey} obj={member} onUpdate={getAllMembers} />
+        ))}
+      </div>
+    </>
   );
 }
-
-export default Home;

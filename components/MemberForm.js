@@ -31,13 +31,13 @@ export default function MemberForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateMember(formInput).then(() => router.push('/team'));
+      updateMember(formInput).then(() => router.push('/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMember(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateMember(patchPayload).then(() => {
-          router.push('/team');
+          router.push('/');
         });
       });
     }
