@@ -1,9 +1,9 @@
-# 🌹 Ka-Tet 🥀  [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://app.netlify.com/sites/drt-sortinghat/deploys)
+# 🌹 Ka-Tet 🥀  [![Netlify Status](https://api.netlify.com/api/v1/badges/9000e815-8453-4aa6-9a50-eb4d94e9a610/deploy-status)](https://app.netlify.com/sites/elfrey-ka-tet/deploys)
 <!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
 
 Ka-Tet is a Team Roster App based on the Dark Tower Series of books by Stephen King.
 
-[View App](#your-link)
+[View App](https://elfrey-ka-tet.netlify.app/)
 
 ## Get Started <!-- OPTIONAL, but doesn't hurt -->
 PLACE CODE SNIPPET HERE
