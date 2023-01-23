@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { getMembers } from '../api/members';
 import Member from '../components/Member';
+import Meta from '../components/Meta';
 import { useAuth } from '../utils/context/authContext';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Meta />
       <h1>Your Ka-Tet</h1>
       <div className="d-flex flex-wrap">
         {members.map((member) => (
