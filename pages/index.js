@@ -12,9 +12,11 @@ export default function Home() {
   const getAllMembers = () => {
     getMembers(user.uid).then(setMembers);
   };
+
   useEffect(() => {
     getAllMembers();
   }, []);
+
   return (
     <>
       <Meta />
