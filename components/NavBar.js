@@ -23,7 +23,7 @@ export default function NavBar() {
             <Link passHref href="/member/new">
               <Nav.Link>New Member</Nav.Link>
             </Link>
-            <Button variant="danger" onClick={signOut}>Sign Out</Button>
+            <Button variant="danger" size="sm" onClick={signOut}>Sign Out</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
