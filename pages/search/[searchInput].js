@@ -19,10 +19,11 @@ export default function SearchPage() {
   };
 
   useEffect(() => {
-    const abortController = new AbortController();
+    // const abortController = new AbortController();
     searchAllMembers();
     return () => {
-      abortController.abort();
+      setSearchMembers([]);
+      // abortController.abort();
       // stop the query by aborting on the AbortController on unmount
     };
   }, [searchInput]);
