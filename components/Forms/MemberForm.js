@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { createMember, updateMember } from '../api/members';
-import { useAuth } from '../utils/context/authContext';
+import { createMember, updateMember } from '../../api/members';
+import { useAuth } from '../../utils/context/authContext';
 
 const initialState = {
   name: '',
