@@ -1,7 +1,12 @@
 import React from 'react';
+import TeamForm from '../../components/Forms/TeamForm';
+import Meta from '../../components/Meta';
 
 export default function AddTeamPage() {
   return (
-    <div>AddTeamPage</div>
+    <>
+      <Meta />
+      <TeamForm />
+    </>
   );
 }

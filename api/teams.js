@@ -32,4 +32,32 @@ const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getTeams, getSingleTeam };
+const createTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const updateTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/teams/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
+export {
+  getTeams, getSingleTeam, createTeam, updateTeam,
+};
