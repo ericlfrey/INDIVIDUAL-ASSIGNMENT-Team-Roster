@@ -4,21 +4,26 @@ import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { createMember, updateMember } from '../../api/members';
 import { useAuth } from '../../utils/context/authContext';
+import { getTeams } from '../../api/teams';
 
 const initialState = {
   name: '',
   role: '',
   image: '',
+  team_id: '',
 };
 
 export default function MemberForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
+  const [teams, setTeams] = useState([]);
   const { user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
+    getTeams(user.uid).then(setTeams);
+
     if (obj.firebaseKey) setFormInput(obj);
-  }, [obj]);
+  }, [obj, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,6 +86,32 @@ export default function MemberForm({ obj }) {
           required
         />
       </FloatingLabel>
+      {teams.length
+        ? (
+          <FloatingLabel controlId="floatingSelect" label="Team">
+            <Form.Select
+              aria-label="Team"
+              name="team_id"
+              onChange={handleChange}
+              className="mb-3"
+              value={formInput.team_id}
+              required
+            >
+              <option value="">Select a Team</option>
+              {
+                teams.map((team) => (
+                  <option
+                    key={team.firebaseKey}
+                    value={team.firebaseKey}
+                  >
+                    {team.name}
+                  </option>
+                ))
+              }
+            </Form.Select>
+          </FloatingLabel>
+        )
+        : ''}
 
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Member</Button>
@@ -94,6 +125,7 @@ MemberForm.propTypes = {
     role: PropTypes.string,
     image: PropTypes.string,
     firebaseKey: PropTypes.string,
+    team_id: PropTypes.string,
   }),
 };
 
