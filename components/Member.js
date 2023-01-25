@@ -11,7 +11,7 @@ export default function Member({ obj, onUpdate }) {
 
   useEffect(() => {
     getSingleTeam(obj.team_id).then(setTeam);
-  });
+  }, []);
   const deleteThisMember = () => {
     if (window.confirm(`Delete ${obj.name}?`)) {
       deleteSingleMember(obj.firebaseKey).then(() => onUpdate());

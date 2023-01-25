@@ -14,12 +14,12 @@ export default function Team({ obj, onUpdate }) {
     <Card style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{obj.name}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-
         <Link passHref href={`/team/${obj.firebaseKey}`}>
           <Card.Link>View</Card.Link>
         </Link>
-        <Card.Link href="#">Edit</Card.Link>
+        <Link passHref href={`/team/edit/${obj.firebaseKey}`}>
+          <Card.Link href="#">Edit</Card.Link>
+        </Link>
         <Card.Link href="#" onClick={deleteThisTeam}>Delete</Card.Link>
       </Card.Body>
     </Card>
