@@ -8,9 +8,13 @@ import { useAuth } from '../utils/context/authContext';
 export default function TeamsPage() {
   const [teams, setTeams] = useState([]);
   const { user } = useAuth();
-  useEffect(() => {
+
+  const getAllTeams = () => {
     getTeams(user.uid).then(setTeams);
-  });
+  };
+  useEffect(() => {
+    getAllTeams();
+  }, []);
   return (
     <>
       <Meta />
