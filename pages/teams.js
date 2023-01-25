@@ -20,7 +20,7 @@ export default function TeamsPage() {
       <Meta />
       <div>
         {teams.map((item) => (
-          <Team key={item.firebaseKey} obj={item} />
+          <Team key={item.firebaseKey} obj={item} onUpdate={getAllTeams} />
         ))}
       </div>
     </>

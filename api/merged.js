@@ -1,4 +1,5 @@
-import { getSingleTeam, getTeamMembers } from './teams';
+import { deleteSingleMember } from './members';
+import { deleteTeam, getSingleTeam, getTeamMembers } from './teams';
 
 const viewTeamMembers = async (firebaseKey) => {
   const teamObject = await getSingleTeam(firebaseKey);
@@ -6,4 +7,15 @@ const viewTeamMembers = async (firebaseKey) => {
   return { ...teamObject, membersArray };
 };
 
-export default viewTeamMembers;
+const deleteTeamAndMembers = (firebaseKey) => new Promise((resolve, reject) => {
+  getTeamMembers(firebaseKey).then((membersArray) => {
+    const deleteMemberPromises = membersArray.map((member) => deleteSingleMember(member.firebaseKey));
+
+    Promise.all(deleteMemberPromises).then(() => {
+      deleteTeam(firebaseKey).then(resolve);
+    });
+  })
+    .catch(reject);
+});
+
+export { viewTeamMembers, deleteTeamAndMembers };
