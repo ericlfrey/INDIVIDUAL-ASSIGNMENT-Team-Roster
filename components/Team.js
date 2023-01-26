@@ -21,10 +21,15 @@ export default function Team({ obj, onUpdate }) {
         <Link passHref href={`/team/${obj.firebaseKey}`}>
           <Card.Link>View</Card.Link>
         </Link>
-        <Link passHref href={`/team/edit/${obj.firebaseKey}`}>
-          <Card.Link href="#">Edit</Card.Link>
-        </Link>
-        <Card.Link href="#" onClick={deleteThisTeam}>Delete</Card.Link>
+        {obj.uid === user.uid
+          && (
+            <>
+              <Link passHref href={`/team/edit/${obj.firebaseKey}`}>
+                <Card.Link href="#">Edit</Card.Link>
+              </Link>
+              <Card.Link href="#" onClick={deleteThisTeam}>Delete</Card.Link>
+            </>
+          )}
       </Card.Body>
     </Card>
   );
