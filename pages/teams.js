@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
-import { getTeams } from '../api/teams';
+import { getAllPublicTeams } from '../api/teams';
 import Team from '../components/Team';
 import { useAuth } from '../utils/context/authContext';
 
@@ -10,11 +10,12 @@ export default function TeamsPage() {
   const { user } = useAuth();
 
   const getAllTeams = () => {
-    getTeams(user.uid).then(setTeams);
+    // getTeams(user.uid).then(setTeams);
+    getAllPublicTeams(user.uid).then(setTeams);
   };
   useEffect(() => {
     getAllTeams();
-  }, []);
+  }, [teams]);
   return (
     <>
       <Head>
