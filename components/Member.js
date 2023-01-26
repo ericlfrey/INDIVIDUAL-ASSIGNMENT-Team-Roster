@@ -5,9 +5,11 @@ import { Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { deleteSingleMember } from '../api/members';
 import { getSingleTeam } from '../api/teams';
+import { useAuth } from '../utils/context/authContext';
 
 export default function Member({ obj, onUpdate }) {
   const [team, setTeam] = useState({});
+  const { user } = useAuth();
 
   useEffect(() => {
     getSingleTeam(obj.team_id).then(setTeam);
@@ -25,12 +27,17 @@ export default function Member({ obj, onUpdate }) {
           <Card.Title>Name: {obj.name}</Card.Title>
           <Card.Subtitle>Role: {obj.role}</Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">Team: {team.name}</Card.Subtitle>
-          <Link href={`/member/${obj.firebaseKey}`} passHref>
-            <Button variant="info">EDIT</Button>
-          </Link>
-          <Button variant="danger" onClick={deleteThisMember} className="m-2">
-            DELETE
-          </Button>
+          {obj.uid === user.uid
+            && (
+              <>
+                <Link href={`/member/${obj.firebaseKey}`} passHref>
+                  <Button variant="info">EDIT</Button>
+                </Link>
+                <Button variant="danger" onClick={deleteThisMember} className="m-2">
+                  DELETE
+                </Button>
+              </>
+            )}
         </Card.Body>
       </Card>
     </>
