@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { viewTeamMembers } from '../../api/merged';
@@ -19,6 +20,9 @@ export default function ViewTeamPage() {
 
   return (
     <>
+      <Head>
+        <title>{teamDetails.name}</title>
+      </Head>
       <h1>{teamDetails.name}</h1>
       <div className="d-flex flex-wrap">
         {teamDetails.membersArray?.map((item) => <Member key={item.firebaseKey} obj={item} onUpdate={seeTheTeamMembers} />)}

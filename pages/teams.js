@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { getTeams } from '../api/teams';
-import Meta from '../components/Meta';
 import Team from '../components/Team';
 import { useAuth } from '../utils/context/authContext';
 
@@ -17,8 +17,11 @@ export default function TeamsPage() {
   }, []);
   return (
     <>
-      <Meta />
-      <div>
+      <Head>
+        <title>Teams</title>
+      </Head>
+      <h1>We are ka-tet. We are one from many</h1>
+      <div className="d-flex flex-wrap">
         {teams.map((item) => (
           <Team key={item.firebaseKey} obj={item} onUpdate={getAllTeams} />
         ))}
