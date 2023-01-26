@@ -14,6 +14,9 @@ export default function TeamsPage() {
   };
   useEffect(() => {
     getAllTeams();
+    return () => {
+      setTeams([]);
+    };
   }, [teams]);
   return (
     <>
