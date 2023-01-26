@@ -11,7 +11,7 @@ export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container className="navbar-container">
-        <Link passHref href="/">
+        <Link passHref href="/teams">
           <Navbar.Brand>🌹 Ka-Tet 🥀</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

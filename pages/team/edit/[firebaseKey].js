@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getSingleTeam } from '../../../api/teams';
@@ -12,6 +13,11 @@ export default function EditTeamPage() {
     getSingleTeam(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
   return (
-    <TeamForm obj={editItem} />
+    <>
+      <Head>
+        <title>Edit {editItem.name}</title>
+      </Head>
+      <TeamForm obj={editItem} />
+    </>
   );
 }
