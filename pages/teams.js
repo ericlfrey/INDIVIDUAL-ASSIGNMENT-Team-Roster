@@ -10,11 +10,13 @@ export default function TeamsPage() {
   const { user } = useAuth();
 
   const getAllTeams = () => {
-    // getTeams(user.uid).then(setTeams);
     getAllPublicTeams(user.uid).then(setTeams);
   };
   useEffect(() => {
     getAllTeams();
+    return () => {
+      setTeams([]);
+    };
   }, [teams]);
   return (
     <>
