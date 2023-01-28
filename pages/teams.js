@@ -13,11 +13,14 @@ export default function TeamsPage() {
     getAllPublicTeams(user.uid).then(setTeams);
   };
   useEffect(() => {
-    getAllTeams();
+    let isCancelled = false;
+    if (!isCancelled) getAllTeams();
+    // const abortController = new AbortController();
     return () => {
-      setTeams([]);
+      isCancelled = true;
+      // abortController.abort();
     };
-  }, [teams]);
+  }, []);
   return (
     <>
       <Head>
