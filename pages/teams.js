@@ -10,12 +10,17 @@ export default function TeamsPage() {
   const { user } = useAuth();
 
   const getAllTeams = () => {
-    // getTeams(user.uid).then(setTeams);
     getAllPublicTeams(user.uid).then(setTeams);
   };
   useEffect(() => {
-    getAllTeams();
-  }, [teams]);
+    let isCancelled = false;
+    if (!isCancelled) getAllTeams();
+    // const abortController = new AbortController();
+    return () => {
+      isCancelled = true;
+      // abortController.abort();
+    };
+  }, []);
   return (
     <>
       <Head>

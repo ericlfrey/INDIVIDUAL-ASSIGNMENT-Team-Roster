@@ -12,7 +12,11 @@ export default function Member({ obj, onUpdate }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    getSingleTeam(obj.team_id).then(setTeam);
+    let isCancelled = false;
+    if (!isCancelled) getSingleTeam(obj.team_id).then(setTeam);
+    return () => {
+      isCancelled = true;
+    };
   }, []);
   const deleteThisMember = () => {
     if (window.confirm(`Delete ${obj.name}?`)) {

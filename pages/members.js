@@ -5,7 +5,7 @@ import { getMembers } from '../api/members';
 import Member from '../components/Member';
 import { useAuth } from '../utils/context/authContext';
 
-export default function TeamPage() {
+export default function MembersPage() {
   const [members, setMembers] = useState([]);
   const { user } = useAuth();
 
@@ -14,7 +14,11 @@ export default function TeamPage() {
   };
 
   useEffect(() => {
-    getAllMembers();
+    let isCancelled = false;
+    if (!isCancelled) getAllMembers();
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   return (
