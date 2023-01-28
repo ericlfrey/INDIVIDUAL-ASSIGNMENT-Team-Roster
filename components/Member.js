@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { deleteSingleMember } from '../api/members';
 import { getSingleTeam } from '../api/teams';
@@ -35,11 +35,11 @@ export default function Member({ obj, onUpdate }) {
             && (
               <>
                 <Link href={`/member/${obj.firebaseKey}`} passHref>
-                  <Button variant="info">EDIT</Button>
+                  <Card.Link>EDIT</Card.Link>
                 </Link>
-                <Button variant="danger" onClick={deleteThisMember} className="m-2">
+                <Card.Link onClick={deleteThisMember} className="m-2">
                   DELETE
-                </Button>
+                </Card.Link>
               </>
             )}
         </Card.Body>
