@@ -33,7 +33,7 @@ export default function NavBar() {
               </Link>
             </div>
             <SearchBar />
-            <Link passHref href="/team">
+            <Link passHref href="/teams">
               <Nav.Link className="sign-out-btn" size="sm" id="sign-out-btn" onClick={signOut}>Sign Out</Nav.Link>
             </Link>
           </Nav>

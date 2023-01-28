@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { signIn } from '../utils/auth';
@@ -15,9 +16,11 @@ function Signin() {
     >
       <h1>Hi there!</h1>
       <p>Click the button below to login and begin assembling your Ka-Tet!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-        Sign In
-      </Button>
+      <Link passHref href="/">
+        <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+          Sign In
+        </Button>
+      </Link>
     </div>
   );
 }
